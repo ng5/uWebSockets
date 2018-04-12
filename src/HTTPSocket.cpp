@@ -56,7 +56,7 @@ template <bool isServer>
 uS::Socket *HttpSocket<isServer>::onData(uS::Socket *s, char *data, size_t length) {
     HttpSocket<isServer> *httpSocket = (HttpSocket<isServer> *) s;
 
-    httpSocket->cork(false);
+    //httpSocket->cork(false);
 
     if (httpSocket->contentLength) {
         httpSocket->missedDeadline = false;
