@@ -18,7 +18,7 @@ install:
 .PHONY: installLinux
 installLinux:
 	$(eval PREFIX ?= /usr)
-	if [ -d "/usr/lib64" ]; then mkdir -p $(PREFIX)/lib64 && cp libuWS.so $(PREFIX)/lib64/; else mkdir -p $(PREFIX)/lib && cp libuWS.so $(PREFIX)/lib/; fi
+	if [ -d "/usr/lib64" ]; then mkdir -p $(PREFIX)/lib64 && cp libuWS.* $(PREFIX)/lib64/; else mkdir -p $(PREFIX)/lib && cp libuWS.* $(PREFIX)/lib/; fi
 	mkdir -p $(PREFIX)/include/uWS
 	cp src/*.h $(PREFIX)/include/uWS/
 .PHONY: installDarwin
