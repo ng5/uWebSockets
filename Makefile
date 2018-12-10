@@ -6,7 +6,7 @@ CPP_OSX := -stdlib=libc++ -mmacosx-version-min=10.7 -undefined dynamic_lookup $(
 default:
 	make `(uname -s)`
 Linux:
-	$(CXX) $(CPPFLAGS) $(CFLAGS) $(CPP_SHARED) -s -o libuWS.so
+	$(CXX) $(CPPFLAGS) $(CFLAGS) $(CPP_SHARED) -s -lssl -lcrypto -lz -o libuWS.so
 	$(CXX) $(CPPFLAGS) $(CFLAGS) $(CPP_STATIC) -c
 	ar rcs libuWS.a *.o
 	rm *.o
